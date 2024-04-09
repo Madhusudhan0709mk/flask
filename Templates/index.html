@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Simple Form Validation</h1>
+    <form action="/submit" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age" required><br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+        <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+        <div class = "data-submit">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th> <!-- Assuming you want to display indices -->
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>{{ res }}</td> <!-- Display the index of the item -->
+                            <!-- Display the item -->
+                        </tr>
+                   
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>
